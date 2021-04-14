@@ -1,1 +1,9 @@
-<p>header works!</p>
+<div class="jumbotron">
+    <h1 class="display-4">
+        <ng-content select="[title]"></ng-content>
+    </h1>
+    <p class="lead">
+        <ng-content select="[description]"></ng-content>
+    </p>
+    <hr class="my-4" />
+</div>

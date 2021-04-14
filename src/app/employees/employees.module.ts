@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { EmployeesListComponent } from './employees-list/employees-list.component';
 import { EmployeesServiceService } from './employees-service.service';
 import { SharedModule } from '../shared/shared.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -14,7 +15,7 @@ import { SharedModule } from '../shared/shared.module';
     EmployeesServiceService
   ],
   imports: [
-    CommonModule, SharedModule
+    CommonModule, SharedModule, ReactiveFormsModule
   ]
 })
 export class EmployeesModule { }

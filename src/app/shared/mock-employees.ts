@@ -38,7 +38,7 @@ export const EMPLOYEES: Employee[] = [
         firstName: "Richard",
         lastName: "Howard",
         dateOfBirth: "1977-01-01",
-        position: "Manager",
+        position: "manager",
         salary: 5300
     }
 ];
