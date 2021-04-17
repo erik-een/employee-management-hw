@@ -27,6 +27,10 @@ export class EmployeesListComponent implements OnInit {
       })
   }
 
+  onDelete(employeeID: number) {
+    this.employeesServiceService.deleteEmployee(employeeID)
+  }
+
   private createEmployeeForm(): FormGroup {
     return this.formBuilder.group({
       firstName: ["", Validators.required],

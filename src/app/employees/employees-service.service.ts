@@ -23,6 +23,10 @@ export class EmployeesServiceService {
       })
     );
   }
+  deleteEmployee(employeeId: number): Observable<Employee[]> {
+    const employeeIndex = EMPLOYEES.findIndex(employee => employee.id === employeeId);
+    return of(EMPLOYEES.splice(employeeIndex, 1))
+  }
 
   getEmployees(): Observable<Employee[]> {
     return of(EMPLOYEES);

@@ -1,0 +1,59 @@
+<div class="container">
+    <app-header>
+        <SPAN title>Agreements</SPAN>
+        <span description>List of Your Agreements</span>
+    </app-header>
+    <div class="row">
+        <table class="table border border-dark">
+            <thead class="bg-danger">
+                <tr>
+                    <th>ID</th>
+                    <th>Agreement</th>
+                    <th>Duration</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let agreement of agreements"
+                    [ngClass]="{'bg-warning': agreement.type === 'Part time'|| agreement.type === 'Part'}">
+                    <td>{{ agreement.id }}</td>
+                    <td>{{ agreement.type }}</td>
+                    <td>{{ agreement.duration }}</td>
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"
+                        (click)='onDelete(agreement.id)'>
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container h-10">
+            <h1 class="display-4">Add a new Agreement</h1>
+            <form [formGroup]="agreementForm">
+                <div class="row form-group">
+                    <div class="col-sm-4">
+                        <label>Agreement Type</label>
+                        <input formControlName="type" type="text" class="form-control" placeholder="Agreement type" />
+                    </div>
+                    <div class="col-sm-4">
+                        <label>Duration</label>
+                        <input formControlName="duration" type="text" class="form-control"
+                            placeholder="Agreement duration" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <button [disabled]="agreementForm.invalid" class="btn btn-primary float-right"
+                            (click)="addAgreement()">
+                            Submit
+                        </button>
+                        <button class="btn btn-default float-right" (click)="agreementForm.reset()">
+                            Reset your form
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
